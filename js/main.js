@@ -38,6 +38,7 @@ CONFIG.schedule.forEach((item) => {
 function openInvitation(event) {
   if (opening || invitation.open) return;
   opening = true;
+  if (musicWanted) startMusic();          // хэрэглэгчийн даралт дотор эхлүүлнэ (утсанд шаардлагатай)
   returnFocus = event.currentTarget;
   envelope.classList.add('opening');
   document.body.classList.add('dialog-open');
@@ -78,6 +79,7 @@ $('#closeSchedule').addEventListener('click', () => closeDialog(schedule));
   });
 });
 invitation.addEventListener('close', () => {
+  stopMusic();
   document.body.classList.remove('dialog-open');
   envelope.classList.remove('opening');
   envelope.setAttribute('aria-expanded', 'false');
@@ -87,7 +89,7 @@ schedule.addEventListener('close', () => $('#scheduleButton').focus({ preventScr
 
 // Гүйлгэх үед хэсгүүдийг зөөлөн гаргана (IntersectionObserver байхгүй үед шууд харагдана)
 if ('IntersectionObserver' in window && !reducedMotion.matches) {
-  const revealItems = invitation.querySelectorAll('.portrait-arch, .dedication, .welcome, .date-block, .location, .format-card, .actions, .signoff, .memories figure, .invite-footer');
+  const revealItems = invitation.querySelectorAll('.portrait-arch, .dedication, .welcome, .date-block, .location, .format-card, .prize-section, .fee-section, .actions, .signoff, .memories figure, .invite-footer');
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add('rv-in'); io.unobserve(entry.target); }
@@ -101,3 +103,90 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   invitation.addEventListener('close', () => revealItems.forEach((el) => { el.classList.remove('rv-in'); io.observe(el); }));
   revealItems.forEach((el) => io.observe(el));
 }
+
+// Дансны дугаар хуулах (урилга modal дотор тул товч дээрээ мэдэгдэнэ)
+const copyButton = $('#copyAccount');
+if (copyButton) {
+  copyButton.addEventListener('click', async () => {
+    const number = $('#payAccount').textContent.replace(/\s+/g, '');
+    let ok = false;
+    try { await navigator.clipboard.writeText(number); ok = true; } catch (_) {
+      const temp = document.createElement('textarea');
+      temp.value = number; temp.setAttribute('readonly', ''); temp.style.position = 'fixed'; temp.style.opacity = '0';
+      invitation.append(temp); temp.select();
+      try { ok = document.execCommand('copy'); } catch (__) { ok = false; }
+      temp.remove();
+    }
+    copyButton.textContent = ok ? 'Хуулагдлаа ✓' : 'Гараар хуулна уу';
+    copyButton.classList.toggle('copied', ok);
+    setTimeout(() => { copyButton.textContent = 'Хуулах'; copyButton.classList.remove('copied'); }, 2000);
+  });
+}
+
+// ── Л. Чогдовын «Эртний бүжиг»: урилга нээхэд зөөлөн эхэлж, хаахад намжина ──
+const music = $('#bgMusic');
+const musicButton = $('#musicToggle');
+let musicWanted = true;
+let audioCtx = null;
+let musicGain = null;
+let pauseTimer = null;
+const MUSIC_VOLUME = 0.7;
+
+function setMusicUI(playing) {
+  musicButton.setAttribute('aria-pressed', String(playing));
+  musicButton.setAttribute('aria-label', playing ? 'Хөгжим зогсоох' : 'Хөгжим тоглуулах');
+}
+// iPhone дээр audio.volume ажилладаггүй тул Web Audio-гоор чангыг нь удирдана.
+// file:// хэлбэрээр нээхэд Chrome дуугүй болгодог тул тэр үед энгийн аргаар тоглуулна.
+function ensureAudioGraph() {
+  if (audioCtx || location.protocol === 'file:') return;
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return;
+  try {
+    audioCtx = new Ctx();
+    const source = audioCtx.createMediaElementSource(music);
+    musicGain = audioCtx.createGain();
+    musicGain.gain.value = 0;
+    source.connect(musicGain).connect(audioCtx.destination);
+  } catch (_) { audioCtx = null; musicGain = null; }
+}
+function fadeMusic(target, ms) {
+  if (musicGain) {
+    const now = audioCtx.currentTime;
+    musicGain.gain.cancelScheduledValues(now);
+    musicGain.gain.setValueAtTime(musicGain.gain.value, now);
+    musicGain.gain.linearRampToValueAtTime(target, now + ms / 1000);
+    return;
+  }
+  const start = music.volume, t0 = performance.now();
+  (function step(t) {
+    const k = Math.min(1, (t - t0) / ms);
+    music.volume = start + (target - start) * k;
+    if (k < 1) requestAnimationFrame(step);
+  })(t0);
+}
+function startMusic() {
+  clearTimeout(pauseTimer);
+  ensureAudioGraph();
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+  if (!musicGain) music.volume = 0;
+  const playing = music.play();
+  setMusicUI(true);
+  fadeMusic(MUSIC_VOLUME, reducedMotion.matches ? 300 : 2500);
+  if (playing && playing.catch) playing.catch(() => setMusicUI(false));
+}
+function stopMusic(ms = 900) {
+  setMusicUI(false);
+  fadeMusic(0, ms);
+  clearTimeout(pauseTimer);
+  pauseTimer = setTimeout(() => music.pause(), ms + 60);
+}
+musicButton.addEventListener('click', () => {
+  musicWanted = music.paused || musicButton.getAttribute('aria-pressed') !== 'true';
+  if (musicWanted) startMusic(); else stopMusic(500);
+});
+// Өөр таб руу шилжих, утсаа түгжихэд зогсоож, буцаж ирэхэд үргэлжлүүлнэ
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { if (!music.paused) { music.pause(); } }
+  else if (invitation.open && musicWanted) startMusic();
+});

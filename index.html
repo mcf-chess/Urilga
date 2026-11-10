@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#121620">
 <meta name="description" content="Л. Чогдовын дурсгалд зориулсан шатрын тэмцээний хүндэтгэлийн урилга. 2026.11.26 • 09:30 • Дүүрэн төв.">
-<title>Л. Чогдовын дурсгалд · Хүндэтгэлийн урилга</title>
+<title>Л. Чогдов багшийн дурсгалд · Хүндэтгэлийн урилга</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marck+Script&subset=cyrillic&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
 <header class="masthead"><span class="monogram" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#piece-knight"/></svg></span><span data-content="eyebrow">ХҮНДЭТГЭЛИЙН УРИЛГА</span><span class="edition">26 / 11 / 2026</span></header>
 <section class="intro" aria-labelledby="cover-title">
 <p class="overline">ӨВ • ДУРСАМЖ • ХҮНДЭТГЭЛ</p>
-<h1 id="cover-title">Л. Чогдовын <em>дурсгалд</em></h1>
+<h1 id="cover-title"><span class="h1-name">Л. Чогдов багшийн</span> <em>дурсгалд</em></h1>
 <p class="intro-description">Шатрын нөхөрсөг тэмцээнд хүрэлцэн ирэхийг<br>хүндэтгэн урьж байна.</p>
 <div class="envelope-stage">
 <button class="envelope" id="envelope" aria-label="Лац дээр дарж урилгыг нээх" aria-haspopup="dialog">
@@ -64,19 +64,42 @@
 <footer class="cover-footer"><span>2026.11.26 <b>·</b> Пүрэв гараг</span><span>09:30 цагт</span></footer>
 </main>
 <dialog id="invitation" class="invitation" aria-labelledby="invitation-title">
-<div class="invite-toolbar"><span>Л. ЧОГДОВЫН ДУРСГАЛД</span><button class="icon-button" id="closeInvite" aria-label="Урилгыг хаах"><span class="close-label">Хаах</span><span aria-hidden="true">×</span></button></div>
+<div class="invite-toolbar"><span>Л. ЧОГДОВ БАГШИЙН ДУРСГАЛД</span><div class="toolbar-actions"><button class="music-button" id="musicToggle" type="button" aria-pressed="false" aria-label="Хөгжим тоглуулах"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="music-label">Хөгжим</span></button><button class="icon-button" id="closeInvite" aria-label="Урилгыг хаах"><span class="close-label">Хаах</span><span aria-hidden="true">×</span></button></div></div>
 <article class="invite-layout">
-<div class="portrait-panel"><p class="overline">ХҮНДЭТГЭЛИЙН УРИЛГА</p><figure><div class="portrait-arch"><img src="assets/images/chogdov-memory.jpg" width="1064" height="690" alt="Л. Чогдов багшийн дурсамжийн гэрэл зураг" decoding="async"></div><figcaption>Гэрэл зурагт үлдсэн дурсамж</figcaption></figure><p class="portrait-name">Л. Чогдов</p><span class="portrait-caption">БАГШ • ХӨГЖМИЙН ЗОХИОЛЧ • ШАТАРЧИН</span><div class="small-ornament" aria-hidden="true"><i></i><svg class="glyph" aria-hidden="true"><use href="#piece-knight"/></svg><i></i></div></div>
+<div class="portrait-panel"><p class="overline">ХҮНДЭТГЭЛИЙН УРИЛГА</p><figure><div class="portrait-arch"><img src="assets/images/chogdov-memory.jpg" width="1064" height="690" alt="Л. Чогдов багшийн дурсамжийн гэрэл зураг" decoding="async"></div><figcaption>Гэрэл зурагт үлдсэн дурсамж</figcaption></figure><p class="portrait-name">Л. Чогдов</p><span class="portrait-caption">БАГШ • ХӨГЖМИЙН ЗОХИОЛЧ • ШАТАРЧИН</span><div class="small-ornament" aria-hidden="true"><i></i><svg class="glyph" aria-hidden="true"><use href="#piece-knight"/></svg><i></i></div><p class="now-playing"><span aria-hidden="true">♪</span> Л. Чогдов · «Эртний бүжиг»<small>дуурийн хэсэг</small></p></div>
 <div class="invitation-copy"><p class="overline" data-content="eyebrow">ХҮНДЭТГЭЛИЙН УРИЛГА</p><h2 id="invitation-title">Урилга</h2><p class="dedication" data-content="dedication"></p><p class="welcome" data-content="welcome">эрхэм таныг хүрэлцэн ирэхийг хүндэтгэн урьж байна.</p>
 <div class="date-block"><div class="day">26</div><div><span>2026 ОНЫ 11 ДҮГЭЭР САР</span><strong>Пүрэв гараг <b>·</b> 09:30 цагт</strong><em class="holiday">Бүх нийтийн амралтын өдөр</em></div></div>
 <p class="location"><span aria-hidden="true">⌖</span> <span data-content="venue"></span></p>
 <section class="format-section" aria-labelledby="formats-title">
 <p class="overline">ГУРВАН ТӨРӨЛ</p><h3 id="formats-title">Тэмцээний төрлүүд</h3>
 <ul class="format-grid" id="formatGrid">
-<li class="format-card" data-format="rapid"><span class="piece-medal" aria-hidden="true"><svg class="format-icon"><use href="#piece-knight"/></svg></span><div><h4>Рапид</h4><span class="format-english">Rapid Chess</span><p>Түргэвчилсэн тоглолт</p></div><span class="format-number" aria-hidden="true">01</span></li>
-<li class="format-card" data-format="blitz"><span class="piece-medal" aria-hidden="true"><svg class="format-icon"><use href="#piece-queen"/></svg></span><div><h4>Блиц</h4><span class="format-english">Blitz Chess</span><p>Түргэн тоглолт</p></div><span class="format-number" aria-hidden="true">02</span></li>
-<li class="format-card" data-format="solving"><span class="piece-medal" aria-hidden="true"><svg class="format-icon"><use href="#piece-king"/></svg></span><div><h4>Бодлого бодолт</h4><span class="format-english">Chess Problem Solving</span><p>Шатрын бодлого, композици</p><span class="rating-badge">МШХ-ны дотоод чансаа тооцно</span></div><span class="format-number" aria-hidden="true">03</span></li>
+<li class="format-card" data-format="rapid"><span class="piece-medal" aria-hidden="true"><svg class="format-icon"><use href="#piece-knight"/></svg></span><div><h4>Рапид</h4><span class="format-english">Rapid Chess</span><p>Түргэвчилсэн тоглолт</p><span class="format-control"><b>20′ + 20″</b> уналттай</span></div><span class="format-number" aria-hidden="true">01</span></li>
+<li class="format-card" data-format="blitz"><span class="piece-medal" aria-hidden="true"><svg class="format-icon"><use href="#piece-queen"/></svg></span><div><h4>Блиц</h4><span class="format-english">Blitz Chess</span><p>Түргэн тоглолт</p><span class="format-control"><b>3′ + 2″</b> уналттай</span></div><span class="format-number" aria-hidden="true">02</span></li>
+<li class="format-card" data-format="solving"><span class="piece-medal" aria-hidden="true"><svg class="format-icon"><use href="#piece-king"/></svg></span><div><h4>Бодлого бодолт</h4><span class="format-english">Chess Problem Solving</span><p>Шатрын бодлого, композици</p><span class="format-control"><b>2</b> нүүдлийн 2 бодлого · <b>3</b> нүүдлийн 1 бодлого</span><span class="rating-badge">МШХ-ны дотоод чансаа тооцно</span></div><span class="format-number" aria-hidden="true">03</span></li>
 </ul></section>
+<section class="prize-section" aria-labelledby="prizes-title">
+<p class="overline">ШАГНАЛ</p><h3 id="prizes-title">Шагналт байр</h3>
+<ul class="prize-list">
+<li><span class="prize-format">Рапид</span><span class="prize-places"><b>1–5</b> байр</span><span class="prize-extra">+ Шилдэг эмэгтэй тамирчин</span></li>
+<li><span class="prize-format">Блиц</span><span class="prize-places"><b>1–3</b> байр</span></li>
+<li><span class="prize-format">Бодлого бодолт</span><span class="prize-places"><b>1–3</b> байр</span></li>
+</ul>
+</section>
+<section class="fee-section" aria-labelledby="fee-title">
+<div class="fee-head"><div><p class="overline">ОРОЛЦООНЫ ХУРААМЖ</p><h3 id="fee-title">50,000₮</h3></div></div>
+<p class="fee-note">Хураамжид дараах үйлчилгээ багтсан, нэмэлт төлбөргүй:</p>
+<ul class="fee-list">
+<li><span aria-hidden="true">☕</span>Кофе, цай</li>
+<li><span aria-hidden="true">🍽</span>1, 2-р хоол</li>
+<li><span aria-hidden="true">🍰</span>Дессертийн багц</li>
+</ul>
+<div class="pay-box">
+<p class="pay-label">Хураамж төлөх данс</p>
+<p class="pay-bank">Голомт банк</p>
+<div class="pay-row"><span class="pay-account" id="payAccount">3100 1500 170 5036915</span><button class="copy-button" id="copyAccount" type="button" aria-label="Дансны дугаар хуулах">Хуулах</button></div>
+</div>
+<a class="contact-row" href="tel:+97686009908"><span class="contact-label">Зохион байгуулагч · Ч.Мөнхбат</span><span class="contact-phone">8600 9908</span></a>
+</section>
 <div class="actions"><button class="primary-button" id="scheduleButton">Хуваарь харах <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
 <p class="signoff">Хүндэтгэсэн,<strong data-content="organizer"></strong></p></div>
 </article>
@@ -94,5 +117,6 @@
 </dialog>
 <dialog class="schedule-dialog" id="scheduleDialog" aria-labelledby="scheduleTitle"><button class="icon-button" id="closeSchedule" aria-label="Хуваарь хаах">×</button><p class="overline">2026.11.26 · ПҮРЭВ ГАРАГ</p><h2 id="scheduleTitle">Тэмцээний хуваарь</h2><ul id="timeline"></ul><p class="schedule-note">Төрөл тус бүрийн эхлэх цагийг зохион байгуулагч тодруулна.</p></dialog>
 <div class="toast" id="toast" role="status"></div>
-<noscript><p class="noscript">Л. Чогдовын дурсгалд зориулсан шатрын тэмцээн. 2026.11.26 (Пүрэв, Бүх нийтийн амралтын өдөр) • 09:30 цагт • Дүүрэн төв, 4 давхар. Рапид • Блиц • Бодлого бодолт (МШХ-ны дотоод чансаа тооцно). Урилгыг нээхийн тулд JavaScript-ийг идэвхжүүлнэ үү.</p></noscript>
+<audio id="bgMusic" src="assets/audio/ertnii-bujig.mp3" preload="metadata" loop playsinline></audio>
+<noscript><p class="noscript">Л. Чогдовын дурсгалд зориулсан шатрын тэмцээн. 2026.11.26 (Пүрэв, Бүх нийтийн амралтын өдөр) • 09:30 цагт • Дүүрэн төв, 4 давхар. Рапид 20′+20″ • Блиц 3′+2″ • Бодлого бодолт (МШХ-ны дотоод чансаа тооцно). Оролцооны хураамж 50,000₮ (кофе, цай, 1, 2-р хоол, дессерт багтсан). Урилгыг нээхийн тулд JavaScript-ийг идэвхжүүлнэ үү.</p></noscript>
 </body></html>
