@@ -1,25 +1,20 @@
-/* Урилгын тохиргоо — зураг, хуваарийг ЭНД засна */
-
-/* =========================================================
-   ТОХИРГОО — эндээс бүх өөрчлөгдөх мэдээллийг засна
-   ========================================================= */
-const CONFIG = {
-  /* Л. Чогдов багшийн зургууд (assets/images хавтсанд байрлана).
-     Шинэ зураг нэмэх бол { src:"URL эсвэл data:image/...", caption:"..." } гэж нэмнэ.
-     Хоосон массив бол "Зураг оруулах" placeholder харагдана.
-     Зургууд 5 секунд тутам зөөлөн солигдоно; зураг дээр дарахад дараагийнх руу шилжинэ. */
-  photos: [
-    { src: "assets/images/chogdov-group.jpg", caption: "Л. Чогдов багш хамт олны хамт", position: "50% 30%" },
-    { src: "assets/images/chogdov-memory.jpg", caption: "Л. Чогдов багшийн дурсамжаас",   position: "50% 35%" },
+/* Edit invitation content here. Times use Ulaanbaatar (UTC+08:00). */
+const CONFIG = Object.freeze({
+  eyebrow: 'ХҮНДЭТГЭЛИЙН УРИЛГА',
+  dedication: 'Нэрт сурган хүмүүжүүлэгч, хөгжмийн зохиолч, Хөгжим бүжгийн дунд сургуулийн Модон үлээвэр хөгжмийн анхны Монгол багш, СТА, Дэд мастер Л.\u00a0Чогдовын дурсгалд зориулсан шатрын нөхөрсөг тэмцээнд',
+  welcome: 'эрхэм таныг хүрэлцэн ирэхийг хүндэтгэн урьж байна.',
+  date: '2026.11.26 | Пүрэв гараг | 09:30 цагт',
+  categories: [
+    { id: 'rapid', name: 'Рапид', english: 'Rapid Chess', subtitle: 'Түргэвчилсэн тоглолт', icon: 'piece-knight' },
+    { id: 'blitz', name: 'Блиц', english: 'Blitz Chess', subtitle: 'Түргэн тоглолт', icon: 'piece-queen' },
+    { id: 'solving', name: 'Бодлого бодолт', english: 'Chess Problem Solving', subtitle: 'Шатрын бодлого, композици', icon: 'piece-king' }
   ],
-  slideInterval: 5000,
-
-  /* Хуваарь — цаг, тайлбарыг шаардлагатай бол засна */
+  venue: 'Дүүрэн төв · 4 давхар',
+  organizer: 'ФМ, УШ Ч.Мөнхбат',
   schedule: [
-    { time: "09:30", text: "Тэмцээн эхэлнэ" },
-    { time: "—",     text: "Рапид (Rapid)" },
-    { time: "—",     text: "Блиц (Blitz)" },
-    { time: "—",     text: "Бодлого бодолт (Chess Problem Solving) — МШХ-ны дотоод чансаа тооцно" },
-  ],
-
-};
+    { time: '09:30', title: 'Тэмцээн эхэлнэ', detail: 'Дүүрэн төв · 4 давхар' },
+    { time: '—', title: 'Рапид', detail: 'Rapid · Түргэвчилсэн тоглолт' },
+    { time: '—', title: 'Блиц', detail: 'Blitz · Түргэн тоглолт' },
+    { time: '—', title: 'Бодлого бодолт', detail: 'Chess Problem Solving · МШХ-ны дотоод чансаа тооцно' }
+  ]
+});
