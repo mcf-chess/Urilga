@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Хүндэтгэлийн урилга · Л. Чогдовын дурсгалд</title>
+<meta name="description" content="Л. Чогдов багшийн дурсгалд зориулсан шатрын нөхөрсөг тэмцээний урилга — 2026.11.26" />
+
+<!-- Фонт: Times New Roman (системийн) + "Урилга" гарчигт гар бичмэл -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ======================================================
+     SVG тэмдэглэгээ (дахин ашиглах дүрсүүд)
+     ====================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Морь (knight) дүрс -->
+    <symbol id="i-knight" viewBox="0 0 45 45">
+      <path d="M22 10c10.5 1 16.5 8 16 29H15c0-9 10-6.5 8-21"/>
+      <path d="M24 18c.38 2.91-5.55 7.37-8 9-3 2-2.82 4.34-5 4-1.04-.94 1.41-3.04 0-3-1 0 .19 1.23-1 2-1 0-4 1-4-4 0-2 6-12 6-12s1.89-1.9 2-3.5c-.73-.99-.5-2-.5-3 1-1 3 2.5 3 2.5h2s.78-1.99 2.5-3c1 0 1 3 1 3"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><circle cx="12" cy="14.5" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M4 20h4L19 9l-4-4L4 16v4Z M13 7l4 4"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></symbol>
+    <symbol id="i-cal-add" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M7 3v3M17 3v3M4 9h16M12 12.5v5M9.5 15h5M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></symbol>
+    <symbol id="i-sound-on" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+    <symbol id="i-sound-off" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M16 9l5 6M21 9l-5 6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.3" fill="currentColor"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></symbol>
+    <!-- Булангийн угалз -->
+    <symbol id="i-corner" viewBox="0 0 64 64">
+      <path d="M4 60V20Q4 4 20 4h40"/>
+      <path d="M10 60V24Q10 10 24 10h36"/>
+      <path d="M18 18c6-6 14-2 10 4s-10 2-6-2"/>
+      <circle cx="4" cy="4" r="2.5"/>
+    </symbol>
+
+    <!-- Арын хээ: шатрын хүү + хөгжмийн нот -->
+    <pattern id="p-bg" width="180" height="180" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+      <text x="10"  y="50"  font-size="40" fill="#D4AF37">♞</text>
+      <text x="100" y="40"  font-size="30" fill="#BCAAA4">♪</text>
+      <text x="60"  y="120" font-size="36" fill="#BCAAA4">♜</text>
+      <text x="140" y="130" font-size="34" fill="#D4AF37">♫</text>
+      <text x="20"  y="170" font-size="26" fill="#BCAAA4">♬</text>
+      <text x="120" y="85"  font-size="28" fill="#D4AF37">♝</text>
+    </pattern>
+    <pattern id="p-paper" width="140" height="140" patternUnits="userSpaceOnUse" patternTransform="rotate(10)">
+      <text x="8"  y="40"  font-size="30" fill="#8D6E63">♞</text>
+      <text x="80" y="36"  font-size="24" fill="#8D6E63">♪</text>
+      <text x="44" y="100" font-size="28" fill="#8D6E63">♛</text>
+      <text x="104" y="118" font-size="24" fill="#8D6E63">♫</text>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- Арын дэвсгэр -->
+<svg class="bg-pattern" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-bg)"/></svg>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<!-- ======================================================
+     ДУГТУЙ (эхний харагдах байдал)
+     ====================================================== -->
+<main class="scene" id="scene">
+  <div class="scene-title">Л. Чогдовын дурсгалд</div>
+
+  <button class="envelope" id="envelope" type="button" aria-label="Урилгыг нээх">
+    <div class="env-back"></div>
+    <div class="env-letter"><span>Урилга</span></div>
+    <div class="env-front"></div>
+    <div class="env-address">
+      <div class="to">Эрхэм хүндэт</div>
+      <div class="name">Танд</div>
+    </div>
+    <div class="env-flap"></div>
+    <div class="env-seal" aria-hidden="true"><svg><use href="#i-knight"/></svg></div>
+  </button>
+
+  <p class="scene-hint"><span class="dot"></span> Дугтуй дээр дарж урилгаа нээнэ үү</p>
+</main>
+
+<!-- ======================================================
+     УРИЛГЫН КАРТ
+     ====================================================== -->
+<div class="invite-wrap" id="inviteWrap" aria-hidden="true">
+  <article class="invite" id="invite" role="dialog" aria-label="Хүндэтгэлийн урилга">
+    <svg class="paper-pattern" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-paper)"/></svg>
+    <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+    <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+    <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+    <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+
+    <button class="btn-close" id="btnClose" type="button" aria-label="Хаах" title="Хаах">
+      <svg><use href="#i-close"/></svg>
+    </button>
+
+    <div class="invite-inner">
+      <!-- Дээд толгой бичиг -->
+      <div class="eyebrow reveal" style="--i:0">Хүндэтгэлийн урилга</div>
+
+      <!-- Нуман хүрээтэй зураг -->
+      <figure class="reveal" style="--i:1; margin:0">
+        <div class="photo-arch">
+          <div class="photo-arch-inner" id="photoBox">
+            <!-- Зураг JS-ээр (CONFIG.photo) энд орно; хоосон бол placeholder харагдана -->
+            <label class="photo-placeholder" id="photoPlaceholder" for="photoInput">
+              <svg><use href="#i-person"/></svg>
+              Зураг оруулах
+              <small>(дарж өөрийн зургаа сонгоно уу)</small>
+            </label>
+            <input type="file" id="photoInput" accept="image/*" class="sr-only" />
+          </div>
+        </div>
+        <div class="photo-dots" id="photoDots" aria-label="Зураг сонгох"></div>
+        <figcaption class="photo-caption" id="photoCaption">Л. Чогдов багшийн дурсамжаас</figcaption>
+      </figure>
+
+      <!-- Гар бичмэл гарчиг -->
+      <h1 class="script-title reveal" style="--i:2">Урилга</h1>
+
+      <!-- Үндсэн бичвэр -->
+      <p class="lead reveal" style="--i:3">
+        Нэрт сурган хүмүүжүүлэгч, хөгжмийн зохиолч, Хөгжим бүжгийн дунд сургуулийн Модон үлээвэр хөгжмийн анхны Монгол багш, СТА, Дэд мастер <strong>Л.&nbsp;Чогдовын</strong> дурсгалд зориулсан шатрын нөхөрсөг тэмцээнд эрхэм таныг хүрэлцэн ирэхийг хүндэтгэн урьж байна.
+      </p>
+
+      <div class="divider reveal" style="--i:4" aria-hidden="true">
+        <span></span><svg><use href="#i-knight"/></svg><span></span>
+      </div>
+
+      <!-- Хэзээ -->
+      <div class="when">
+        <div class="info-row reveal" style="--i:5">
+          <div class="info-icon"><svg><use href="#i-calendar"/></svg></div>
+          <div class="info-text">
+            <b>2026 оны 11 дүгээр сарын 26</b>
+            <small>Пүрэв гараг · Бүх нийтийн амралтын өдөр</small>
+          </div>
+        </div>
+        <div class="info-row reveal" style="--i:6">
+          <div class="info-icon"><svg><use href="#i-clock"/></svg></div>
+          <div class="info-text">
+            <b>Өглөөний 09:30 цагт</b>
+            <small>эхэлнэ</small>
+          </div>
+        </div>
+        <div class="info-row reveal" style="--i:7">
+          <div class="info-icon"><svg><use href="#i-pin"/></svg></div>
+          <div class="info-text">
+            <b>Дүүрэн төв</b>
+            <small>4 давхар</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Тэмцээний төрлүүд -->
+      <div class="section-label reveal" style="--i:8">Тэмцээний төрлүүд</div>
+      <div class="events">
+        <div class="event reveal" style="--i:9">
+          <span class="glyph" aria-hidden="true">♞</span>
+          <div><b>Рапид</b><small>Rapid</small></div>
+        </div>
+        <div class="event reveal" style="--i:10">
+          <span class="glyph" aria-hidden="true">♝</span>
+          <div><b>Блиц</b><small>Blitz</small></div>
+        </div>
+        <div class="event reveal" style="--i:11">
+          <span class="glyph" aria-hidden="true">♛</span>
+          <div><b>Бодлого бодолт</b><small>Chess Problem Solving</small><span class="event-badge">МШХ-ны дотоод чансаа тооцно</span></div>
+        </div>
+      </div>
+
+      <!-- CTA товчнууд -->
+      <div class="actions reveal" style="--i:12">
+        <button class="btn btn-primary" id="btnSchedule" type="button">
+          <svg><use href="#i-list"/></svg> Хуваарь харах
+        </button>
+      </div>
+
+      <p class="signoff reveal" style="--i:13">Хүндэтгэсэн,<br><span class="signoff-name">ФМ, УШ Ч.Мөнхбат</span></p>
+    </div>
+  </article>
+</div>
+
+<!-- Хуваарийн модал -->
+<div class="modal" id="scheduleModal" role="dialog" aria-modal="true" aria-labelledby="schedTitle">
+  <div class="modal-card">
+    <button class="btn-close" data-close type="button" aria-label="Хаах"><svg><use href="#i-close"/></svg></button>
+    <h3 id="schedTitle">Тэмцээний хуваарь</h3>
+    <div class="sub">2026.11.26 · Пүрэв гараг</div>
+    <ul class="timeline" id="timeline"></ul>
+  </div>
+</div>
+
+<!-- Дууны товч -->
+<button class="sound-toggle" id="soundToggle" type="button" aria-label="Дуу унтраах" title="Дуу">
+  <svg><use href="#i-sound-on"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/config.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
